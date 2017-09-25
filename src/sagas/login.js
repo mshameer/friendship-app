@@ -17,18 +17,18 @@ function* login_process(action) {
       browserHistory.push('/dashboard');
     } else {
       yield put(
-        loginActions.loginFailed({ message: 'Invalid email/password' })
+        loginActions.loginFailed({ message: 'Invalid mobileNo/password' })
       );
     }
   } catch (e) {
-    yield put(loginActions.loginFailed({ message: 'Invalid email/password' }));
+    yield put(loginActions.loginFailed({ message: 'Invalid mobileNo/password' }));
   }
 }
 
 const postLoginToAPI = data => {
   const headers = {
     Authorization: `Basic ${new Buffer(
-      `${data.email}:${data.password}`
+      `${data.mobileNo}:${data.password}`
     ).toString('base64')}`,
   };
   return fetchApi('/users/auth', {}, 'post', {}, headers);

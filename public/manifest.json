@@ -1,12 +1,17 @@
 {
-  "short_name": "create-react-pwa",
-  "name": "Create React PWApp",
+  "short_name": "Souhrda Hastham",
+  "name": "Souhrda Hastham App",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "images/icon_home.ico",
       "sizes": "192x192",
       "type": "image/png"
-    }
+    },
+    {
+      "src": "images/home144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
   ],
   "start_url": "/",
   "display": "standalone",

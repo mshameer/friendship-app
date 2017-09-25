@@ -49,7 +49,7 @@ class IndexPage extends Component {
                   primaryText={item.firstName}
                   secondaryText={
                     <p>
-                      {item.email}
+                      {item.mobileNo}
                     </p>
                   }
                   secondaryTextLines={2}

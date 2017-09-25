@@ -6,7 +6,7 @@ import {
 } from 'actions/signup';
 
 const initialState = {
-  email: '',
+  mobileNo: '',
   firstName: '',
   password: '',
   errors: {},
@@ -38,11 +38,11 @@ export default (state = initialState, action = {}) => {
           errors: { ...state.errors, firstName: '', message: '' },
         };
       }
-      if (change.hasOwnProperty('email')) {
+      if (change.hasOwnProperty('mobileNo')) {
         return {
           ...state,
-          email: change.email,
-          errors: { ...state.errors, email: '', message: '' },
+          mobileNo: change.mobileNo,
+          errors: { ...state.errors, mobileNo: '', message: '' },
         };
       }
       if (change.hasOwnProperty('password')) {

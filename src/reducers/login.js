@@ -2,7 +2,7 @@ import { LOGIN_REQUEST, LOGIN_FAILED, LOGIN_INPUT_CHANGE } from 'actions/login';
 
 const initialState = {
   isFetching: false,
-  email: 'mshameer@gmail.com',
+  mobileNo: 'mshameer@gmail.com',
   password: 'qwweee@123',
   pause: false,
   errors: {},
@@ -23,11 +23,11 @@ export default (state = initialState, action = {}) => {
 
     case LOGIN_INPUT_CHANGE:
       let { change } = action;
-      if (change.hasOwnProperty('email')) {
+      if (change.hasOwnProperty('mobileNo')) {
         return {
           ...state,
-          email: change.email,
-          errors: { ...state.errors, email: '', message: '' },
+          mobileNo: change.mobileNo,
+          errors: { ...state.errors, mobileNo: '', message: '' },
           pause: false,
         };
       }

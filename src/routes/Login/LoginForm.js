@@ -9,7 +9,7 @@ class LoginForm extends Component {
   static propTypes = {
     processing: PT.bool, // send request?
     errors: PT.object,
-    email: PT.string,
+    mobileNo: PT.string,
     password: PT.string,
     pause: PT.bool,
     login: PT.func,
@@ -19,7 +19,7 @@ class LoginForm extends Component {
   static defaultProps = {
     processing: false,
     errors: {},
-    email: '',
+    mobileNo: '',
     password: '',
     pause: true,
     login: () => {},
@@ -37,26 +37,26 @@ class LoginForm extends Component {
   submit(e) {
     e.preventDefault();
     this.props.login({
-      email: this.props.email,
+      mobileNo: this.props.mobileNo,
       password: this.props.password,
     });
   }
 
   render() {
-    const { processing, errors, email, password, pause } = this.props;
+    const { processing, errors, mobileNo, password, pause } = this.props;
     const error_message =
-      errors.email || errors.password || errors.message || false;
+      errors.mobileNo || errors.password || errors.message || false;
 
     return (
       <form>
         <h2>Login</h2>
         <hr />
         <TextField
-          name="email"
+          name="mobileNo"
           hintText="E-mail"
           floatingLabelText="E-mail"
           fullWidth={true}
-          value={email}
+          value={mobileNo}
           onChange={::this.onChangeHandle}
         />
         <TextField

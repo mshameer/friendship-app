@@ -50,7 +50,7 @@ const LeftDrawer = props => {
   return (
     <Drawer docked={true} open={navDrawerOpen}>
       <div style={styles.logo}>
-        Progressive Manu
+        സൗഹൃദ ഹസ്തം 
       </div>
       <div style={styles.avatar.div}>
         <Avatar

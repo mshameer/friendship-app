@@ -18,7 +18,7 @@ const Login = ({
   loginRequest,
   inputChange,
   isFetching,
-  email,
+  mobileNo,
   password,
   errors,
   pause,
@@ -29,7 +29,7 @@ const Login = ({
         <Paper style={styles.paper}>
           <LoginForm
             processing={isFetching}
-            email={email}
+            mobileNo={mobileNo}
             password={password}
             pause={pause}
             errors={errors}
@@ -62,14 +62,14 @@ Login.propTypes = {
   errors: PT.object,
   loginRequest: PT.func,
   inputChange: PT.func,
-  email: PT.string,
+  mobileNo: PT.string,
   password: PT.string,
 };
 
 const mapStateToProps = ({ login }) => ({
   errors: login.errors,
   isFetching: login.isFetching,
-  email: login.email,
+  mobileNo: login.mobileNo,
   password: login.password,
   pause: login.pause,
 });
@@ -80,9 +80,9 @@ const mapDispatchToProps = dispatch => ({
     // Front Validation
     let newErrors = {};
     let hasErrors = false;
-    let { email, password } = loginData;
-    if (!email || email.length < 2) {
-      newErrors.email = 'min 2';
+    let { mobileNo, password } = loginData;
+    if (!mobileNo || mobileNo.length < 2) {
+      newErrors.mobileNo = 'min 2';
       hasErrors = true;
     }
     if (!password || password.length < 2) {

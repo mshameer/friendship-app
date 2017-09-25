@@ -34,7 +34,7 @@ class Header extends React.Component {
       <div>
         <AppBar
           style={{ ...styles, ...style.appBar }}
-          title="Progressive App"
+          title="സൗഹൃദ ഹസ്തം"
           iconElementLeft={
             <IconButton
               style={style.menuButton}

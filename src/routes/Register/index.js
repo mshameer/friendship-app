@@ -16,7 +16,7 @@ class Register extends Component {
   render() {
     const {
       errors,
-      email,
+      mobileNo,
       password,
       firstName,
       registerUser,
@@ -27,7 +27,7 @@ class Register extends Component {
       <Layout title="Register">
         <div id="page-index" className="page" style={{ paddingTop: 60 }}>
           <RegisterForm
-            email={email}
+            mobileNo={mobileNo}
             password={password}
             firstName={firstName}
             errors={errors}
@@ -45,14 +45,14 @@ Register.propTypes = {
   registerUser: PT.func,
   inputChange: PT.func,
   firstName: PT.string,
-  email: PT.string,
+  mobileNo: PT.string,
   password: PT.string,
 };
 
 const mapStateToProps = ({ signup }) => ({
   errors: signup.errors,
   firstName: signup.firstName,
-  email: signup.email,
+  mobileNo: signup.mobileNo,
   password: signup.password,
 });
 
@@ -62,13 +62,13 @@ const mapDispatchToProps = dispatch => ({
     // Front Validation
     let newErrors = {};
     let hasErrors = false;
-    let { email, password, firstName } = userData;
+    let { mobileNo, password, firstName } = userData;
     if (!firstName || firstName.length < 2) {
       newErrors.firstName = 'First Name required';
       hasErrors = true;
     }
-    if (!email || email.length < 2) {
-      newErrors.email = 'Email required';
+    if (!mobileNo || mobileNo.length < 2) {
+      newErrors.mobileNo = 'Mobile No required';
       hasErrors = true;
     }
     if (!password || password.length < 2) {

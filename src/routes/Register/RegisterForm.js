@@ -7,7 +7,7 @@ import Snackbar from 'material-ui/Snackbar';
 class RegisterForm extends Component {
   static propTypes = {
     errors: PT.object,
-    email: PT.string,
+    mobileNo: PT.string,
     password: PT.string,
     firstName: PT.string,
     register: PT.func,
@@ -16,7 +16,7 @@ class RegisterForm extends Component {
 
   static defaultProps = {
     errors: {},
-    email: '',
+    mobileNo: '',
     password: '',
     firstName: '',
     register: () => {},
@@ -29,15 +29,15 @@ class RegisterForm extends Component {
 
   submit(e) {
     e.preventDefault();
-    const { email, password, firstName } = this.props;
-    this.props.register({ email, password, firstName });
+    const { mobileNo, password, firstName } = this.props;
+    this.props.register({ mobileNo, password, firstName });
   }
 
   render() {
-    const { errors, email, password, firstName } = this.props;
+    const { errors, mobileNo, password, firstName } = this.props;
     const error_message =
       errors.firstName ||
-      errors.email ||
+      errors.mobileNo ||
       errors.password ||
       errors.message ||
       false;
@@ -55,11 +55,11 @@ class RegisterForm extends Component {
           onChange={::this.onChangeHandle}
         />
         <TextField
-          name="email"
-          hintText="E-mail"
-          floatingLabelText="E-mail"
+          name="mobileNo"
+          hintText="Mobile No"
+          floatingLabelText="Unique mobile no"
           fullWidth={true}
-          value={email}
+          value={mobileNo}
           onChange={::this.onChangeHandle}
         />
         <TextField

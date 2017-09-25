@@ -3,7 +3,7 @@
 * Users.js
 */
 
-const PASSWORD_MIN_LENGTH = 8;
+const PASSWORD_MIN_LENGTH = 5;
 const PASSWORD_MAX_LENGTH = 30;
 
 module.exports = {
@@ -12,10 +12,10 @@ module.exports = {
 			required: true,
 		},
 
-		email: {
+		mobileNo: {
 			required: true,
 			unique: true,
-			type: 'email',
+			type: 'string',
 		},
 
 		password: {
@@ -37,10 +37,9 @@ module.exports = {
 		firstName: {
 			required: 'First name is required.',
 		},
-		email: {
-			required: 'Email address is required.',
-			email: 'Email address is not valid.',
-			unique: 'Email address already exists.',
+		mobileNo: {
+			required: 'Mobile No is required.',
+			unique: 'Mobile No already exists.',
 		},
 		password: {
 			required: 'Password is required.',
@@ -59,7 +58,7 @@ module.exports = {
 	add(attrs, next) {
 		const payload = {
 			firstName: String(attrs.firstName).trim(),
-			email: String(attrs.email).trim(),
+			mobileNo: String(attrs.mobileNo).trim(),
 			password: String(attrs.password).trim(),
 		};
 		return this.create(payload).exec(next);

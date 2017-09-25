@@ -29,9 +29,9 @@ passport.deserializeUser((id, next) =>
  */
 passport.use(
 	new BasicStrategy(
-		(email, password, next) =>
+		(mobileNo, password, next) =>
 			Users.findOne({
-				email,
+				mobileNo,
 			}).exec((findErr, user) => {
 				if (findErr) {
 					return next(findErr);

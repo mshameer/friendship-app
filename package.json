@@ -1,8 +1,8 @@
 {
-  "name": "sails-react-redux-boilerplate",
+  "name": "friendship-app",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "Experimental Friendship app",
   "keywords": [],
   "dependencies": {
     "Buffer": "0.0.0",
